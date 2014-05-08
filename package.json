@@ -1,0 +1,33 @@
+{
+  "name": "pulkit24.github.io",
+  "version": "0.0.1",
+  "description": "Personal Portfolio for Pulkit Karwal",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-coffee": "~0.10.1",
+    "grunt-contrib-jade": "~0.11.0",
+    "grunt-contrib-less": "~0.11.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://pulkit24@github.com/pulkit24/pulkit24.github.io.git"
+  },
+  "keywords": [
+    "web",
+    "development",
+    "front-end",
+    "angular"
+  ],
+  "author": "Pulkit Karwal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pulkit24/pulkit24.github.io/issues"
+  }
+}
