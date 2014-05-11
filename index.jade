@@ -1,10 +1,21 @@
 doctype html
 html
 	head
+		meta(charset="utf-8")
 		title Pulkit Karwal | Front-end Web Developer and Software Engineer | Portfolio
+
+		//- link(rel="stylesheet", type="text/css", href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css")
+		link(rel="stylesheet", type="text/css", href="http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css")
 		link(rel="stylesheet", type="text/css", href="styles.css")
 
-	body
+		<!--[if gte IE 9]><!-->
+		style
+			| .gradient {
+			|	filter: none;
+			| }
+		<!--<![endif]-->
+
+	body(ng-app="portfolio", ng-controller="PortfolioCtrl")
 		// Top nav bar
 		header
 			// Logo
@@ -24,9 +35,16 @@ html
 
 		// About me
 		section#section-about
-			h1 Hey there, I'm Pulkit Karwal, a Melbourne-based web developer.
-			h2 I enjoy creating neat websites and online applications.
-			aside I do a bit of design too!
+			.side.center.column
+				img#profile(src="http://placehold.it/100x100&text=PIC")
+			.main.column
+				h1 Hey there, I'm Pulkit Karwal, a Melbourne-based web developer.
+				h2 I enjoy creating neat websites and online applications.
+				aside I do a bit of design too!
+				.center
+					a.read-more(href="#work") Check out my work &rarr;
+					|  or
+					a.subtle-link(href="#contact") get in touch.
 		// end about me
 
 		// Work samples
@@ -34,6 +52,7 @@ html
 			h2
 				a(name="work") Work
 			// add: subnav, subsections by category of work (or tags maybe?)
+			project(ng-repeat="project in projects | orderBy:'order' track by $index", title="{{ project.title }}", description="{{ project.description }}", organization="{{ project.organization }}", date="{{ project.date }}", site="{{ project.site }}", url="{{ project.url }}")
 		// end work samples
 
 		// Contact details
@@ -43,5 +62,13 @@ html
 			// add: Personals, social links and resume
 		// end contact details
 
-		script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js")
+		script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js")
 		script(src="app.js")
+
+		//- Template: project tile
+		script(type="text/ng-template", id="project.tpl.html")
+			.project-tile
+				h3 {{ title }}
+				em {{ organization }} during {{ date }}
+				p.after.column {{ description }}
+				a.column.right(href="{{ url }}") {{ site }} &rarr;

@@ -1,0 +1,8 @@
+[{
+	"title": "Social Network Explorer"
+	, "description": "Intelligently categorize, compare and plot trends of public posts on Facebook and Twitter. Built entirely in AngularJS, with a PHP back-end for API access and caching."
+	, "organization": "RMIT University"
+	, "date": "Spring 2013"
+	, "site": "Github"
+	, "url": "http://github.com/pulkit24/social-explorer"
+}]
